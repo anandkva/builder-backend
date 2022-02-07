@@ -12,7 +12,7 @@ const create = async (req, res) => {
   });
   createData.save((err) => {
     if (!err) {
-      res.send({ message: "Success", code: 1 }, console.log(req.body));
+      res.send({ message: "Success", code: 1 });
     } else {
       res.send({ message: err, code: 0 });
     }
