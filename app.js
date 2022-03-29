@@ -4,6 +4,7 @@ const port = process.env.PORT || 4000;
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const userRouter = require("./routes/user");
+const currencyRouter = require("./routes/currency");
 const {database} = require("./database/database");
 const cors = require('cors')
 
@@ -13,6 +14,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/user", userRouter);
+app.use("/currency", currencyRouter);
 
 database()
 app.listen(port, (err) => {
